@@ -1,4 +1,4 @@
-#include "classparent";
+#include "classparent.h"
 
 class classmusic : public classparent {
  public:

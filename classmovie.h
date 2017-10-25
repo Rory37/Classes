@@ -1,6 +1,6 @@
-#include "classparent"
+#include "classparent.h"
 
-class classmovie {
+class classmovie : public classparent {
  public:
 
   virtual void setDirect(char*);

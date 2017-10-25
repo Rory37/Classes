@@ -1,3 +1,6 @@
+#ifndef guard //Note: This guard code is based on wikipedia's Include_Guard page
+#define guard
+
 class classparent {
  public:
   virtual void setType(int);
@@ -10,3 +13,5 @@ class classparent {
   char* title;
   int type;
 };
+
+#endif

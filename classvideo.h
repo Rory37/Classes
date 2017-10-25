@@ -1,4 +1,4 @@
-#include "classparent"
+#include "classparent.h"
 
 class classvideo : public classparent{
  public:
@@ -8,6 +8,6 @@ class classvideo : public classparent{
   virtual char* getPublisher();
   virtual double getRating();
 
-  char* [80];
+  char* publisher;
   double rating;
 };

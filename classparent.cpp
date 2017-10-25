@@ -15,7 +15,7 @@ void classparent::setTitle(char* newTitle) {
   strcpy(title,newTitle);
 }
 
-char [80] classparent::getTitle() {
+char* classparent::getTitle() {
   return title;
 }
 
