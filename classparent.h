@@ -1,4 +1,4 @@
-#ifndef guard //Note: This guard code is based on wikipedia's Include_Guard page
+#ifndef guard //Note: This guard code is based on wikipedia's Include_Guard page ; The guard is needed to say that
 #define guard
 
 class classparent {
