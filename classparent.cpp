@@ -12,6 +12,7 @@ int classparent::getType() {
 }
 
 void classparent::setTitle(char* newTitle) {
+  title = new char[80];
   strcpy(title,newTitle);
 }
 

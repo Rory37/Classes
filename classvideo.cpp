@@ -4,6 +4,7 @@
 using namespace std;
 
 void classvideo :: setPublisher (char* newPub) {
+  publisher = new char[80];
   strcpy(publisher, newPub);
 }
 

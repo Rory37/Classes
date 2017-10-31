@@ -4,6 +4,7 @@
 using namespace std;
 
 void classmovie :: setDirect(char* newDir) {
+  director = new char[80];
   strcpy(director, newDir);
 }
 

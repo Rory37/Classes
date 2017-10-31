@@ -4,6 +4,7 @@
 using namespace std;
 
 void classmusic :: setArtist(char* newArt) {
+  artist = new char[80];
   strcpy(artist, newArt);
 }
 
@@ -12,6 +13,7 @@ char* classmusic :: getArtist() {
 }
 
 void classmusic :: setPublish(char* newPub) {
+  publisher = new char[80];
   strcpy(publisher, newPub);
 }
 
