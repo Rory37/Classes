@@ -3,24 +3,24 @@
 #include <cstring>
 using namespace std;
 
-classmovie :: ~classmovie() {
+classmovie :: ~classmovie() {//destructor
   delete director; 
 }
 
-void classmovie :: setDirect(char* newDir) {
+void classmovie :: setDirect(char* newDir) { //sets the director pointer
   director = new char[80];
   strcpy(director, newDir);
 }
 
-char* classmovie :: getDirect() {
+char* classmovie :: getDirect() { //returns the director pointer
   return director;
 }
 
-void classmovie :: setDur(double newDur ) {
+void classmovie :: setDur(double newDur ) { //sets the duration
   duration = newDur;
 }
 
-double classmovie :: getDur() {
+double classmovie :: getDur() {//returns
   return duration;
 }
 
