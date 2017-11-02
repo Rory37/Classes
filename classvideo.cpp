@@ -3,6 +3,10 @@
 #include <cstring>
 using namespace std;
 
+classvideo :: ~classvideo(){
+  delete publisher;
+}
+  
 void classvideo :: setPublisher (char* newPub) {
   publisher = new char[80];
   strcpy(publisher, newPub);

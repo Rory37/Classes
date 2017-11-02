@@ -3,6 +3,7 @@
 
 class classparent {
  public:
+  ~classparent();
   virtual void setType(int);
   virtual void setTitle(char*);
   virtual void setYear(int);

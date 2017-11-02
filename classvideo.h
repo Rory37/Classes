@@ -2,7 +2,7 @@
 
 class classvideo : public classparent{
  public:
-
+  ~classvideo();
   virtual void setPublisher(char*);
   virtual void setRating(double);
   virtual char* getPublisher();

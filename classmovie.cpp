@@ -3,6 +3,10 @@
 #include <cstring>
 using namespace std;
 
+classmovie :: ~classmovie() {
+  delete director; 
+}
+
 void classmovie :: setDirect(char* newDir) {
   director = new char[80];
   strcpy(director, newDir);

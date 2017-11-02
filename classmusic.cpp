@@ -3,6 +3,11 @@
 #include <cstring>
 using namespace std;
 
+classmusic :: ~classmusic() {
+  delete artist;
+  delete publisher;
+}
+
 void classmusic :: setArtist(char* newArt) {
   artist = new char[80];
   strcpy(artist, newArt);

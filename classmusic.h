@@ -2,7 +2,7 @@
 
 class classmusic : public classparent {
  public:
-
+  ~classmusic();
   virtual void setArtist(char*);
   virtual void setPublish(char*);
   virtual void setDur(double);

@@ -3,6 +3,10 @@
 #include <cstring>
 using namespace std;
 
+classparent :: ~classparent() {
+  delete title;
+}
+
 void classparent::setType(int newType) {
   type = newType;
 }

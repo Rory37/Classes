@@ -10,6 +10,7 @@ using namespace std;
 
 void add(vector<classparent*>*);
 void search(vector<classparent*>*);
+void deleting(vector<classparent*>*);
 
 int main() {
   vector<classparent*>* list = new vector<classparent*>();
@@ -26,6 +27,12 @@ int main() {
     
     if (strcmp(com, "ADD") == 0) {
       add(list);
+    }
+    else if (strcmp(com, "SEARCH") == 0){
+      search(list);
+    }
+    else if (strcmp(com, "DELETE") == 0) {
+      deleting(list);
     }
     else if (strcmp(com, "QUIT") == 0) {
       running = false;
@@ -168,6 +175,7 @@ void add(vector<classparent*>* list) {
       cout << "Please make sure that you enter a valid media" << endl;
     }
   }
+  delete list;
 }
 
 void search(vector<classparent*>* list) {
@@ -191,29 +199,29 @@ void search(vector<classparent*>* list) {
 	if (strcmp(search, (*it) -> title) == 0) {
 
 	  if (((*it) -> getType()) == 0) {
-	    classvideo* newvi = (classvideo)(*it); //Line by Jason Galbraith
+	    classvideo* newvi = (classvideo*)(*it); //Line by Jason Galbraith
 	    cout << "Type: Videogame" << endl;
 	    cout << "Title: " << newvi -> getTitle() << endl;
 	    cout << "Year: " << newvi -> getYear() << endl;
 	    cout << "Publisher: " << newvi -> getPublisher() << endl;
-	    cout << "Rating: " << newvi -> getRating() << endl;
+	    cout << "Rating: " << newvi -> getRating() << endl << endl;
 	  }
 	  else if (((*it) -> getType()) == 1) {
-	    classmovie* newmo = (classmovie*)it; //Line by Jason Galbraith
+	    classmovie* newmo = (classmovie*)(*it); //Line by Jason Galbraith
 	    cout << "Type: Movie" << endl;
 	    cout << "Title: " << newmo -> getTitle() << endl;
 	    cout << "Year: " << newmo -> getYear() << endl;
 	    cout << "Duration: " << newmo -> getDur() << endl;
-	    cout << "Rating: " << newmo -> getRate() << endl;
+	    cout << "Rating: " << newmo -> getRate() << endl << endl;
 	  }
 	  else if (((*it) -> getType()) == 2) {
-	    classmusic* newmu = (classmusic*)it; //Line from Jason Galbraith
+	    classmusic* newmu = (classmusic*)(*it); //Line from Jason Galbraith
 	    cout << "Type: Music" << endl;
 	    cout << "Title: " << newmu -> getTitle() << endl;
 	    cout << "Year: " << newmu -> getYear() << endl;
 	    cout << "Artist: " << newmu -> getArtist() << endl;
 	    cout << "Duration: " << newmu -> getDur() << endl;
-	    cout << "Publisher: " << newmu -> getPublish() << endl;
+	    cout << "Publisher: " << newmu -> getPublish() << endl << endl;
 	  }
 	}
       }
@@ -229,29 +237,188 @@ void search(vector<classparent*>* list) {
 	if ((*it) -> year == y) {
 
 	  if (((*it) -> getType()) == 0) {
-	    classvideo* newvi = (classvideo*)it; //Line by Jason Galbraith
+	    classvideo* newvi = (classvideo*)(*it); //Line by Jason Galbraith
 	    cout << "Type: Videogame" << endl;
 	    cout << "Title: " << newvi -> getTitle() << endl;
 	    cout << "Year: " << newvi -> getYear() << endl;
 	    cout << "Publisher: " << newvi -> getPublisher() << endl;
-	    cout << "Rating: " << newvi -> getRating() << endl;
+	    cout << "Rating: " << newvi -> getRating() << endl << endl;
 	  }
 	  else if (((*it) -> getType()) == 1) {
-	    classmovie* newmo = (classmovie*)it; //Line by Jason Galbraith
+	    classmovie* newmo = (classmovie*)(*it); //Line by Jason Galbraith
 	    cout << "Type: Movie" << endl;
 	    cout << "Title: " << newmo -> getTitle() << endl;
 	    cout << "Year: " << newmo -> getYear() << endl;
 	    cout << "Duration: " << newmo -> getDur() << endl;
-	    cout << "Rating: " << newmo -> getRate() << endl;
+	    cout << "Rating: " << newmo -> getRate() << endl << endl;
 	  }
 	  else if (((*it) -> getType()) == 2) {
-	    classmusic* newmu = (classmusic*)it; //Line from Jaso Galbraith
+	    classmusic* newmu = (classmusic*)(*it); //Line from Jaso Galbraith
 	    cout << "Type: Music" << endl;
 	    cout << "Title: " << newmu -> getTitle() << endl;
 	    cout << "Year: " << newmu -> getYear() << endl;
 	    cout << "Artist: " << newmu -> getArtist() << endl;
 	    cout << "Duration: " << newmu -> getDur() << endl;
-	    cout << "Publisher: " << newmu -> getPublish() << endl;
+	    cout << "Publisher: " << newmu -> getPublish() << endl << endl;
+	  }
+	}
+      }
+    }
+    else {
+      cout << "Please put in TITLE or YEAR for search method" << endl;
+    }
+  }
+}
+
+void deleting(vector<classparent*>* list) {
+  cout << "Do you wish to search for items to delete by TITLE or YEAR?" << endl;
+  char stype[80];
+  cin.getline(stype, 80);
+  bool val = false;
+  while (val == false) {
+
+    for (int i = 0; i < strlen(stype); i++) {
+      stype[i] = toupper(stype[i]);
+    }
+
+    if (strcmp(stype, "TITLE") == 0) {
+      val = true;
+      cout << "Please input the title you wish to delete" << endl;
+      char search[80];
+      cin.getline(search, 80);
+      bool ended = false;
+      while (ended == false){
+	ended = true;
+	for (vector<classparent*>:: iterator it = list -> begin(); it != list -> end(); ++it) {
+	  
+	  if (strcmp(search, (*it) -> title) == 0) {
+	    
+	    if (((*it) -> getType()) == 0) {
+	      classvideo* newvi = (classvideo*)(*it); //Line provided by Jason Galbraith
+	      cout << "Type: Videogame" << endl;
+	      cout << "Title: " << newvi -> getTitle() << endl;
+	      cout << "Year: " << newvi -> getYear() << endl;
+	      cout << "Publisher: " << newvi -> getPublisher() << endl;
+	      cout << "Rating: " << newvi -> getRating() << endl << endl;
+	      cout << "Do you wish to delete this title (y or n)" << endl;
+	      char yesno;
+	      cin >> yesno;
+	      cin.ignore();
+	      if (yesno == 'y') {
+		delete newvi;
+		list -> erase(it);
+		ended = false;
+		break;
+	      }
+	    }
+	    else if (((*it) -> getType()) == 1) {
+	      classmovie* newmo = (classmovie*)(*it); //Line by Jason Galbraith
+	      cout << "Type: Movie" << endl;
+	      cout << "Title: " << newmo -> getTitle() << endl;
+	      cout << "Year: " << newmo -> getYear() << endl;
+	      cout << "Duration: " << newmo -> getDur() << endl;
+	      cout << "Rating: " << newmo -> getRate() << endl << endl;
+	      cout << "Do you wish to delete this title (y or n)" << endl;
+	      char yesno;
+	      cin >> yesno;
+	      cin.ignore();
+	      if (yesno == 'y') {
+		delete newmo;
+		list -> erase(it);
+		ended = false;
+		break;
+	      }
+	    }
+	    else if (((*it) -> getType()) == 2) {
+	      classmusic* newmu = (classmusic*)(*it); //Line from Jason Galbraith
+	      cout << "Type: Music" << endl;
+	      cout << "Title: " << newmu -> getTitle() << endl;
+	      cout << "Year: " << newmu -> getYear() << endl;
+	      cout << "Artist: " << newmu -> getArtist() << endl;
+	      cout << "Duration: " << newmu -> getDur() << endl;
+	      cout << "Publisher: " << newmu -> getPublish() << endl << endl;
+	      cout << "Do you wish to delete this title (y or n)" << endl;
+	      char yesno;
+	      cin >> yesno;
+	      cin.ignore();
+	      if (yesno == 'y') {
+		delete newmu;
+		list -> erase(it);
+		ended = false;
+		break;
+	      }
+	    }
+	  }
+	}
+      }
+    }
+    else if (strcmp(stype, "YEAR") == 0) {
+      val = true;
+      cout << "Please input the year you are searching for" << endl;
+      int y;
+      cin >> y;
+      cin.ignore();
+      bool ended = false;
+      while (ended == false) {
+	ended = true;
+	for (vector<classparent*>:: iterator it = list -> begin(); it != list -> end(); ++it) {
+	  
+	  if ((*it) -> year == y) {
+	    if (((*it) -> getType()) == 0) {
+	      classvideo* newvi = (classvideo*)(*it); //Line by Jason Galbraith
+	      cout << "Type: Videogame" << endl;
+	      cout << "Title: " << newvi -> getTitle() << endl;
+	      cout << "Year: " << newvi -> getYear() << endl;
+	      cout << "Publisher: " << newvi -> getPublisher() << endl;
+	      cout << "Rating: " << newvi -> getRating() << endl << endl;
+	      cout << "Do you wish to delete this title (y or n)" << endl;
+	      char yesno;
+	      cin >> yesno;
+	      cin.ignore();
+	      if (yesno == 'y') {
+		delete newvi;
+		list -> erase(it);
+		ended = false;
+		break;
+	      }
+	    }
+	    else if (((*it) -> getType()) == 1) {
+	      classmovie* newmo = (classmovie*)(*it); //Line by Jason Galbraith
+	      cout << "Type: Movie" << endl;
+	      cout << "Title: " << newmo -> getTitle() << endl;
+	      cout << "Year: " << newmo -> getYear() << endl;
+	      cout << "Duration: " << newmo -> getDur() << endl;
+	      cout << "Rating: " << newmo -> getRate() << endl << endl;
+	      cout << "Do you wish to delete this title (y or n)" << endl;
+	      char yesno;
+	      cin >> yesno;
+	      cin.ignore();
+	      if (yesno == 'y') {
+		delete newmo;
+		list -> erase(it);
+		ended = false;
+		break;
+	      }
+	    }
+	    else if (((*it) -> getType()) == 2) {
+	      classmusic* newmu = (classmusic*)(*it); //Line from Jason Galbraith
+	      cout << "Type: Music" << endl;
+	      cout << "Title: " << newmu -> getTitle() << endl;
+	      cout << "Year: " << newmu -> getYear() << endl;
+	      cout << "Artist: " << newmu -> getArtist() << endl;
+	      cout << "Duration: " << newmu -> getDur() << endl;
+	      cout << "Publisher: " << newmu -> getPublish() << endl << endl;
+	      cout << "Do you wish to delete this title (y or n)" << endl;
+	      char yesno;
+	      cin >> yesno;
+	      cin.ignore();
+	      if (yesno == 'y') {
+		delete newmu;
+		list -> erase(it);
+		ended = false;
+		break;
+	      }
+	    }
 	  }
 	}
       }
