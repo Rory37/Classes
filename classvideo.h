@@ -1,8 +1,8 @@
 #include "classparent.h"
 
-class classvideo : public classparent{
+class classvideo : public classparent{//setts as child
  public:
-  ~classvideo();
+  ~classvideo();//destructor
   virtual void setPublisher(char*);
   virtual void setRating(double);
   virtual char* getPublisher();
