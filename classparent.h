@@ -1,9 +1,9 @@
-#ifndef guard //Note: This guard code is based on wikipedia's Include_Guard page ; The guard is needed to say that
+#ifndef guard //Note: This guard code is based on wikipedia's Include_Guard page ; The guard is needed to prevent multiple inclusions causing issue
 #define guard
 
 class classparent {
  public:
-  ~classparent();
+  ~classparent();//destructor
   virtual void setType(int);
   virtual void setTitle(char*);
   virtual void setYear(int);
