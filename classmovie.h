@@ -1,8 +1,9 @@
-#include "classparent.h"
+#include "classparent.h" //Sets up inheritence
 
-class classmovie : public classparent {
+class classmovie : public classparent {//sets as child class
  public:
-  ~classmovie();
+  ~classmovie(); //destructor
+ //Sets all the virtual methods (virt
   virtual void setDirect(char*);
   virtual void setRate(double);
   virtual void setDur(double);
