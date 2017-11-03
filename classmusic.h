@@ -1,8 +1,8 @@
-#include "classparent.h"
+#include "classparent.h" //sets up inheretence
 
-class classmusic : public classparent {
+class classmusic : public classparent {//sets up inheretence
  public:
-  ~classmusic();
+  ~classmusic(); //destructor
   virtual void setArtist(char*);
   virtual void setPublish(char*);
   virtual void setDur(double);
