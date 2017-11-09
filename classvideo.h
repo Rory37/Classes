@@ -3,11 +3,12 @@
 class classvideo : public classparent{//setts as child
  public:
   ~classvideo();//destructor
-  virtual void setPublisher(char*);
-  virtual void setRating(double);
-  virtual char* getPublisher();
-  virtual double getRating();
+ //Sets all the virtual methods (virtual lets it overide the parent class)
+  virtual void setPublisher(char*);//Function to set publisher
+  virtual void setRating(double);//Function to set rating
+  virtual char* getPublisher();//Function to return publisher
+  virtual double getRating();//Function to return rating
 
-  char* publisher;
-  double rating;
+  char* publisher;//pointer to array to store publisher
+  double rating;//double to store rating
 };
