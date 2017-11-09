@@ -20,14 +20,14 @@ void classmovie :: setDur(double newDur ) { //sets the duration
   duration = newDur;
 }
 
-double classmovie :: getDur() {//returns
+double classmovie :: getDur() {//returns the duration
   return duration;
 }
 
-void classmovie :: setRate(double newRate) {
+void classmovie :: setRate(double newRate) {//sets the rating
   rating = newRate;
 }
 
-double classmovie :: getRate() {
+double classmovie :: getRate() {//returns the rating
   return rating;
 }
