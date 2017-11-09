@@ -3,16 +3,16 @@
 class classmovie : public classparent {//sets as child class
  public:
   ~classmovie(); //destructor
- //Sets all the virtual methods (virt
-  virtual void setDirect(char*);
-  virtual void setRate(double);
-  virtual void setDur(double);
+ //Sets all the virtual methods (virtual lets it overide the parent class)
+  virtual void setDirect(char*);//declares funtion to set the director
+  virtual void setRate(double);//declares function to set rating
+  virtual void setDur(double);//declares function to set duration
 
-  virtual char* getDirect();
-  virtual double getRate();
-  virtual double getDur();
+  virtual char* getDirect();//function to return director
+  virtual double getRate();//function to return rating
+  virtual double getDur();//function to return duration
 
-  char* director;
-  double rating;
-  double duration;
+  char* director; //pointer to array to store director
+  double rating;//double to store rating
+  double duration;//double to store duration
 };
