@@ -3,15 +3,16 @@
 class classmusic : public classparent {//sets up inheretence
  public:
   ~classmusic(); //destructor
-  virtual void setArtist(char*);
-  virtual void setPublish(char*);
-  virtual void setDur(double);
+ //Sets all the virtual methods (virtual lets it overide the parent class)
+  virtual void setArtist(char*); //function to set artist
+  virtual void setPublish(char*);//function to set publisher
+  virtual void setDur(double); // function to set duration
   
-  virtual char* getArtist();
-  virtual char* getPublish();
-  virtual double getDur();
+  virtual char* getArtist(); //function to return artist
+  virtual char* getPublish();//function to return publisher
+  virtual double getDur(); //function to return duration
 
-  char* artist;
-  char* publisher;
-  double duration;
+  char* artist;//pointer to array to store artist
+  char* publisher;//pointer to array to store publisher
+  double duration;//double to store duration
 };
