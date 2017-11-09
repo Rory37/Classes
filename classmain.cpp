@@ -6,6 +6,12 @@
 #include "classmusic.h"
 #include "classparent.h"
 
+//Aidan Derocher
+//11/09/17
+//Classes is a program that is a database for three different types of media. These media type can each be added, each
+//with different fields in them, but all having a year and title inherited from the parent class. They can be searched by name or year, and deleted 
+//through the same method.
+
 using namespace std;
 
 void add(vector<classparent*>*);
